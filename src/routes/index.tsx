@@ -471,7 +471,42 @@ const PROMPT_GROUP_ORDER = [
   "For teachers",
 ];
 
-const SKILL_GROUP_ORDER = ["Brand", "Design", "Content", "Marketing", "Tools", "For teachers"];
+const agentSkills: SkillCard[] = [
+  {
+    id: "a-dicien",
+    category: "Agents",
+    title: "Dicien agent",
+    description: "English-Portuguese dictionary agent. Just type the word, get translation + examples.",
+    tag: "agent",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/dicien.md",
+  },
+  {
+    id: "a-dicifr",
+    category: "Agents",
+    title: "Dicifr agent",
+    description: "French-Portuguese dictionary agent. Just type the word, get translation + examples.",
+    tag: "agent",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/dicifr.md",
+  },
+  {
+    id: "a-diciit",
+    category: "Agents",
+    title: "Diciit agent",
+    description: "Italian-Portuguese dictionary agent. Just type the word, get translation + examples.",
+    tag: "agent",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/diciit.md",
+  },
+  {
+    id: "a-visu",
+    category: "Agents",
+    title: "Visu agent",
+    description: "Turns any topic or notes into an interactive visual: decks, infographics, timelines.",
+    tag: "agent",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/visu.md",
+  },
+];
+
+const SKILL_GROUP_ORDER = ["Brand", "Design", "Content", "Marketing", "Tools", "For teachers", "Agents"];
 
 function groupByCategory<T extends { category: string }>(items: T[], order: string[]) {
   return order
@@ -483,7 +518,7 @@ function OpenCodeLibraryPage() {
   const [activeTab, setActiveTab] = useState<Tab>("prompts");
 
   const promptGroups = groupByCategory([...workshopPrompts, ...prompts, ...teacherPrompts], PROMPT_GROUP_ORDER);
-  const skillGroups = groupByCategory([...skills, ...teacherSkills], SKILL_GROUP_ORDER);
+  const skillGroups = groupByCategory([...skills, ...teacherSkills, ...agentSkills], SKILL_GROUP_ORDER);
 
   return (
     <div className="min-h-screen bg-background pb-24">
