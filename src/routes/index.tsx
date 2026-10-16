@@ -457,6 +457,38 @@ const teacherSkills: SkillCard[] = [
     tag: "scripts",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/roteirista-aulas",
   },
+  {
+    id: "t-homework",
+    category: "For teachers",
+    title: "Homework",
+    description: "Generates lesson homework from a Notion page: gap fill, match, true or false.",
+    tag: "homework",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/homework",
+  },
+  {
+    id: "t-corretor",
+    category: "For teachers",
+    title: "Corretor",
+    description: "Corrects student homework inline on a Notion page, including gabarito check.",
+    tag: "correction",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/corretor",
+  },
+  {
+    id: "t-elvis",
+    category: "For teachers",
+    title: "Elvis",
+    description: "Generates lesson audio with ElevenLabs and attaches it to the Notion page.",
+    tag: "audio",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/elvis",
+  },
+  {
+    id: "t-imager",
+    category: "For teachers",
+    title: "Imager",
+    description: "Illustrates a Notion lesson with free stock photos, one per scene.",
+    tag: "images",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/imager",
+  },
 ];
 
 const PROMPT_GROUP_ORDER = [
