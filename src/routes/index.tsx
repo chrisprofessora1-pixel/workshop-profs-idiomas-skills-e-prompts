@@ -245,6 +245,92 @@ const skills: SkillCard[] = [
   },
 ];
 
+const workshopPrompts: PromptCard[] = [
+  {
+    id: "w-atividade",
+    category: "Workshop",
+    title: "Atividade interativa",
+    description: "Flashcards clicáveis do seu tema, prontos para projetar em aula.",
+    body: `Crie um arquivo HTML único (CSS e JS dentro do próprio arquivo, sem dependências externas) de flashcards interativos para minha turma:
+
+- Idioma: [INGLÊS]
+- Nível: [A1]
+- Tema: [comparatives, cheap/cheaper, tall/taller]
+- Quantidade: [30] cards
+
+Regras do material:
+1. Cada card tem FRENTE (palavra base) e VERSO (resposta + tradução curta em pt-BR).
+2. Clique vira o card (efeito flip). Inclua botão de embaralhar e filtros por grupo.
+3. Visual simples para projetar: fundo claro, fonte grande, 1 instrução no topo.
+4. No topo: título + nível + meu nome [@profchriscastelli].
+5. No final: 1 dica de uso em aula em 2 linhas.
+6. Salve como atividade-[tema].html e me diga como abrir e imprimir em PDF.`,
+  },
+  {
+    id: "w-prova",
+    category: "Workshop",
+    title: "Prova com gabarito",
+    description: "Prova justa de 30 minutos + gabarito com critérios de correção.",
+    body: `Crie uma prova + gabarito para minha turma:
+
+- Idioma: [INGLÊS]
+- Nível: [A1]
+- Conteúdo: [verbo to be afirmativo, I am, you are, he/she/it is]
+- Questões: [10] (complete, múltipla escolha e 2 de escrita curta)
+
+Regras:
+1. Prova em linguagem simples, 1 ponto por questão, com cabeçalho (nome, data, turma).
+2. Inclua quadro-resumo do conteúdo no topo para o aluno consultar.
+3. Gere DOIS arquivos: prova-[tema].md (sem respostas) e gabarito-[tema].md (com respostas + 1 linha explicando cada uma).
+4. Erros clássicos de brasileiros precisam aparecer (ex: esquecer o pronome I/you/he).
+5. No fim do gabarito: critérios de correção rápida.
+6. Me diga como transformar em PDF.`,
+  },
+  {
+    id: "w-lista",
+    category: "Workshop",
+    title: "Lista de vocabulário",
+    description: "Ficha A1 em 5 blocos no seu molde, pronta para A4 paisagem.",
+    body: `Crie uma ficha de vocabulário no meu molde A1 (página única, estilo mapa mental):
+
+- Idioma: [INGLÊS]
+- Nível: [A1]
+- Tema: [alfabeto]
+- Itens: [26 letras] com pronúncia aportuguesada (ex: A = "ei", B = "bi")
+
+Estrutura obrigatória (5 blocos):
+1. Lista em ordem (grupos de 5)
+2. Como pronunciar (pronúncia + confusões comuns: E/I, G/J)
+3. Exemplos (5 palavras com emoji + tradução)
+4. Regra rápida (1 frase)
+5. Dica + mini-exercício de 5 linhas no rodapé
+
+Formato: HTML único + CSS inline, pronto para A4 paisagem, com badge "Nível A1" e assinatura @profchriscastelli. Salve como ficha-[tema].html e me diga como gerar o PDF.`,
+  },
+  {
+    id: "w-listening",
+    category: "Workshop",
+    title: "Listening completo",
+    description: "Diálogo + legenda + quiz de compreensão, pronto para gerar o áudio.",
+    body: `Monte um listening completo para minha turma:
+
+- Idioma: [INGLÊS]
+- Nível: [A1]
+- Situação: [no aeroporto, check-in, gate, seat]
+- Tamanho: diálogo de [16 linhas], frases curtas, vocabulário repetido
+
+Entregue 3 coisas:
+1. listening-[tema].txt: diálogo só no idioma-alvo, 1 fala por linha, sem tradução (para gerar o áudio).
+2. listening-[tema].srt: mesma fala numerada com tempos estimados para legendar.
+3. quiz-[tema].md: 5 perguntas de compreensão (3 múltipla escolha + 2 verdadeiro/falso) + gabarito no fim.
+
+Regras:
+- Frases que o aluno realmente vai usar (ex: "Where is the gate?", "seat 14A, window seat").
+- Repita 5 palavras-chave pelo menos 2x no diálogo.
+- Me diga o passo a passo para gerar o áudio e como usar em aula (ouvir 2x sem texto, 1x com legenda).`,
+  },
+];
+
 const teacherPrompts: PromptCard[] = [
   {
     id: "t-worksheet",
@@ -292,12 +378,36 @@ const teacherPrompts: PromptCard[] = [
 
 const teacherSkills: SkillCard[] = [
   {
+    id: "t-dic-en",
+    category: "For teachers",
+    title: "English dictionary",
+    description: "Defines English words with Portuguese translation, and Portuguese words with English definition + example.",
+    tag: "dictionary",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/dicionario-ingles",
+  },
+  {
+    id: "t-dic-fr",
+    category: "For teachers",
+    title: "French dictionary",
+    description: "Defines French words with Portuguese translation, and Portuguese words with French definition + example.",
+    tag: "dictionary",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/dicionario-frances",
+  },
+  {
+    id: "t-dic-it",
+    category: "For teachers",
+    title: "Italian dictionary",
+    description: "Defines Italian words with Portuguese translation, and Portuguese words with Italian definition + example.",
+    tag: "dictionary",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/dicionario-italiano",
+  },
+  {
     id: "t-exam-skill",
     category: "For teachers",
     title: "Exam builder",
     description: "Builds English exams in the school format, ready to use.",
     tag: "tests",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/opencode-toolkit/tree/main/skills/murilo-prova",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/murilo-prova",
   },
   {
     id: "t-discussion-skill",
@@ -305,7 +415,7 @@ const teacherSkills: SkillCard[] = [
     title: "Discussion questions",
     description: "Generates discussion questions for your next class.",
     tag: "class",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/opencode-toolkit/tree/main/skills/perguntas-para-aula",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/perguntas-para-aula",
   },
   {
     id: "t-lesson-skill",
@@ -313,7 +423,7 @@ const teacherSkills: SkillCard[] = [
     title: "Lesson plans",
     description: "Turns a topic into a structured lesson plan with timing and activities.",
     tag: "lessons",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/opencode-toolkit/tree/main/skills/teaching-lesson-plan",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/teaching-lesson-plan",
   },
   {
     id: "t-retrieval-skill",
@@ -321,7 +431,7 @@ const teacherSkills: SkillCard[] = [
     title: "Retrieval practice",
     description: "Quick revision quizzes at different difficulties.",
     tag: "revision",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/opencode-toolkit/tree/main/skills/retrieval-practice-generator",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/retrieval-practice-generator",
   },
   {
     id: "t-vocab-skill",
@@ -329,7 +439,7 @@ const teacherSkills: SkillCard[] = [
     title: "Vocabulary tiers",
     description: "Sorts the words in a text into everyday, academic and technical, so you know what to teach first.",
     tag: "vocabulary",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/opencode-toolkit/tree/main/skills/vocabulary-tiering-tool",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/vocabulary-tiering-tool",
   },
   {
     id: "t-worksheet-skill",
@@ -337,11 +447,20 @@ const teacherSkills: SkillCard[] = [
     title: "Worksheets",
     description: "Student worksheets and vocabulary homework, ready to fill in.",
     tag: "worksheets",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/opencode-toolkit/tree/main/skills/licao-de-casa",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/licao-de-casa",
+  },
+  {
+    id: "t-roteirista",
+    category: "For teachers",
+    title: "Roteirista de aulas",
+    description: "Turns a raw idea into a full recording-ready lesson script, in Portuguese.",
+    tag: "scripts",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/roteirista-aulas",
   },
 ];
 
 const PROMPT_GROUP_ORDER = [
+  "Workshop",
   "Setup",
   "Integration",
   "Authentication",
@@ -363,7 +482,7 @@ function groupByCategory<T extends { category: string }>(items: T[], order: stri
 function OpenCodeLibraryPage() {
   const [activeTab, setActiveTab] = useState<Tab>("prompts");
 
-  const promptGroups = groupByCategory([...prompts, ...teacherPrompts], PROMPT_GROUP_ORDER);
+  const promptGroups = groupByCategory([...workshopPrompts, ...prompts, ...teacherPrompts], PROMPT_GROUP_ORDER);
   const skillGroups = groupByCategory([...skills, ...teacherSkills], SKILL_GROUP_ORDER);
 
   return (
