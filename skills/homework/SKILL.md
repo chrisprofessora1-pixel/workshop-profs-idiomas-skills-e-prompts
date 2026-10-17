@@ -33,10 +33,11 @@ and with `biner` (notion-beautifier) to give the final page the polished
    colored exercise titles + callout instructions, as in October 13 Homework:
    `## 📚 EXERCISE 1 — frequency adverbs {color="purple"}` followed by
    `<callout icon="💡" color="gray_bg">\n\t💡 Short instruction.\n</callout>`.
-4. **Verify before pushing** (mandatory): save the markdown to /tmp, then from
-   this skill's folder (where `verify.py` lives) run
-   `python3 verify.py file.md`,
-   fix everything it reports (repeats, option rhythm, caps giveaways).
+4. **Verify before pushing** (mandatory): save the markdown to a scratch file
+   (`/tmp` on macOS/Linux, `%TEMP%` on Windows), then from this skill's folder
+   (where `verify.py` lives) run `python3 verify.py file.md` (`python verify.py
+   file.md` on Windows). Fix everything it reports (repeats, option rhythm,
+   caps giveaways).
    Then push with `ntn pages edit` (replaces content — re-attach audio
    blocks afterwards if the page had any).
 5. **Report**: what was added, answers/gabarito in chat when asked. Always

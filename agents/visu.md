@@ -20,7 +20,7 @@ Rules:
   4. Semantic HTML: `<main id="main-content">`, multiple `<section>` blocks, skip-to-content link.
   5. Chart.js when charts needed: `<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>` + `<script>Chart.defaults.animation = false;</script>`, canvas with `role="img"` + `aria-label`, `maintainAspectRatio:false`, `responsive:true`, tooltips enabled. Use ChartManager.safeInit pattern from SKILL.md, init in DOMContentLoaded, no import/export syntax.
 - After writing file, do BOTH:
-  1. Auto-open: `open <file>.html` (macOS) / `xdg-open` (Linux)
+  1. Auto-open: `open <file>.html` (macOS) / `xdg-open <file>.html` (Linux) / `start "" <file>.html` (Windows)
   2. Return clickable `file://<absolute-path>` in response
 
 Workflow:

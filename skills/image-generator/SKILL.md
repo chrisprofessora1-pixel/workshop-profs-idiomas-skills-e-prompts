@@ -37,15 +37,29 @@ This skill generates and edits images using Google's Gemini Nano Banana Pro mode
 Before using this skill, the user must set the `GEMINI_API_KEY` environment variable:
 
 1. Get a free API key from [Google AI Studio](https://aistudio.google.com/)
-2. Export the key in your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
+2. Set the key as an environment variable.
+
+   macOS / Linux — add to your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
    ```bash
    read -rsp "Gemini API key: " GEMINI_API_KEY
    echo
    export GEMINI_API_KEY
    ```
-3. Restart your terminal or run `source ~/.zshrc` (or `~/.bashrc`)
+   then restart your terminal or run `source ~/.zshrc` (or `~/.bashrc`).
+
+   Windows — permanent (PowerShell):
+   ```powershell
+   setx GEMINI_API_KEY "your-key-here"
+   ```
+   then open a new terminal. For the current session only: `$env:GEMINI_API_KEY = "your-key-here"`.
 
 **The skill will not work without this configuration.**
+
+**Platform note:** the `bash` examples below work on macOS/Linux and in Git Bash
+on Windows. Use `python` instead of `python3` on Windows, and read `/tmp/...` as
+"a scratch file" (`%TEMP%` on Windows). The `base64` difference is handled below;
+Git Bash ships `base64`, PowerShell users can use `certutil -encode` or the Python
+snippet instead.
 
 ## Pre-flight Check
 

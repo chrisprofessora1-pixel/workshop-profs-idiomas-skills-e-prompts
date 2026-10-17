@@ -46,7 +46,11 @@ def main():
     if not text or not text.strip():
         sys.exit("No text provided (--text or --file).")
     voice = VOICES.get(a.voice, a.voice)
-    key = open(KEY_FILE).read().strip()
+    key = os.environ.get("ELEVENLABS_API_KEY")
+    if not key:
+        if not os.path.exists(KEY_FILE):
+            sys.exit(f"No ElevenLabs key. Set ELEVENLABS_API_KEY or create {KEY_FILE}.")
+        key = open(KEY_FILE).read().strip()
 
     status, audio = api_post(f"/text-to-speech/{voice}", key, {
         "text": text.strip(), "model_id": a.model,

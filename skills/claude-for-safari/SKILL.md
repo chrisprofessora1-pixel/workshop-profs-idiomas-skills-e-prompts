@@ -5,6 +5,10 @@ description: Control the user's real Safari browser on macOS using AppleScript a
 
 # Claude for Safari
 
+> **Platform: macOS only.** This skill depends on AppleScript (`osascript`) and
+> `screencapture`, which do not exist on Windows or Linux. On Windows, use the
+> `claude-chrome` skill instead (Chrome extension, works on Windows/macOS/Linux).
+
 Operate the user's real Safari browser on macOS via AppleScript (`osascript`) and `screencapture`. This provides full access to the user's actual browser session — including login state, cookies, and open tabs — without any extensions or additional software.
 
 ## Prerequisites

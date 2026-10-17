@@ -38,9 +38,12 @@ git --version
 
 Se algum retornar erro / "command not found" / abrir Microsoft Store, marcar como faltando.
 
-### 3. Instalar dependências faltantes via winget
+### 3. Instalar dependências faltantes
 
-Se Python faltar:
+Escolher o gerenciador da plataforma: Windows → `winget`; macOS → Homebrew
+(`brew`); Linux → o gerenciador da distro (`apt`, `dnf`, etc.).
+
+**Windows (winget)** — se Python faltar:
 
 ```powershell
 winget install -e --id Python.Python.3.11 --silent --accept-package-agreements --accept-source-agreements
@@ -52,7 +55,10 @@ Se Git faltar:
 winget install -e --id Git.Git --silent --accept-package-agreements --accept-source-agreements
 ```
 
-**IMPORTANTE:** depois do winget instalar, o PATH só atualiza em novos shells. Se acabou de instalar Python ou Git, avisar o usuário:
+**macOS/Linux** — `brew install python git`, ou `sudo apt install python3 git`
+(Debian/Ubuntu), ou o equivalente da distro.
+
+**IMPORTANTE (Windows):** depois do winget instalar, o PATH só atualiza em novos shells. Se acabou de instalar Python ou Git, avisar o usuário:
 
 > "Acabei de instalar Python/Git, fera. Fecha e abre o VS Code uma vez (File → Close Folder → reabre o folder), aí roda `/instale` denovo. É chato mas é uma vez só."
 

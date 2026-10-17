@@ -2,10 +2,13 @@
 set -e
 CMD=$1
 
+# Windows/Git Bash often has `python` but not `python3`.
+PYTHON=$(command -v python3 || command -v python)
+
 if [ "$CMD" = "cut" ]; then
   IN=$2; TIMELINE=$3; OUT=$4
 
-  python3 - "$IN" <<'PY'
+  "$PYTHON" - "$IN" <<'PY'
 import json, subprocess, sys
 video = sys.argv[1]
 keep = json.load(open("timeline.json"))["keep"]

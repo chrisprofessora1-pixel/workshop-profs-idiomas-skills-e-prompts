@@ -9,10 +9,17 @@ description: Use when the user says Elvis, gera audio, listening audio, ElevenLa
 
 Elvis generates lesson audio with ElevenLabs and attaches it to Notion pages.
 
+Runs on macOS, Linux and Windows (Python 3, plus the `ntn` CLI for the Notion
+step).
+
 ## Script
 
-`tts.py`, in this same folder (python3, stdlib only). Run the commands below
-from inside this skill's folder (where `tts.py` lives).
+`tts.py`, in this same folder (stdlib only, no pip installs). Run the commands
+below from inside this skill's folder (where `tts.py` lives).
+
+- Interpreter: `python3` on macOS/Linux, `python` on Windows.
+- `/tmp/...` below just means "a scratch file": `/tmp` on macOS/Linux,
+  `%TEMP%` on Windows.
 
 ```bash
 # English lesson (American Teacher)
@@ -29,9 +36,15 @@ python3 tts.py \
   --attach 3fa32ffa-5828-8000-b533-dd3edd5cd0a7
 ```
 
+On Windows, run the same commands in PowerShell with `python` instead of
+`python3` (e.g. `python tts.py --voice teacher --file $env:TEMP\script.txt --out lesson.mp3`).
+
 ## Rules
 
-- Key lives in `~/.config/elevenlabs_key` (chmod 600). Never print, log, or paste it.
+- Key lives in `~/.config/elevenlabs_key` (macOS/Linux) or
+  `%USERPROFILE%\.config\elevenlabs_key` (Windows), with restricted permissions
+  (`chmod 600` on macOS/Linux, or a per-user ACL on Windows). Never print, log,
+  or paste it.
 - Voices: `teacher` = American Teacher (`ygJ6KeHyX2fupNmZ7V8m`), `francais` = Prof de français (`eKxxLqrrIIlLJm9gHteO`). A raw voice ID also works.
 - Model default `eleven_multilingual_v2` (handles EN + FR).
 - Script text should be clean narration (no markdown, no blanks). Strip `________`, callouts, and tables before sending.

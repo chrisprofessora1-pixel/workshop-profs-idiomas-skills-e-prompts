@@ -11,9 +11,12 @@ um vídeo (reels/shorts/tiktok), especialmente com legendas karaoke estéticas
 e efeitos sonoros naturais.
 
 ## Requisitos
-- ffmpeg 7+ (em PATH ou ~/.npm-global/bin/)
-- python3 com: openai-whisper, requests
-- Avenir Next (fonte nativa macOS, usada nas legendas)
+- ffmpeg 7+ no PATH
+- Python 3 com: openai-whisper, requests (`python3` no macOS/Linux, `python` no Windows)
+- Fonte das legendas: Avenir Next (nativa no macOS). No Windows/Linux, troque pelo
+  nome de uma fonte equivalente instalada (ex.: `Montserrat` ou `Segoe UI`) nos
+  arquivos `scripts/generate_ass.py` e `scripts/generate_ass_white.py`, ou instale
+  a Avenir Next.
 
 ElevenLabs (obrigatório para SFX):
 - API key em ~/.config/elevenlabs/key ou env ELEVENLABS_API_KEY
@@ -21,8 +24,13 @@ ElevenLabs (obrigatório para SFX):
 
 ## Pipeline
 
-WORKDIR: /var/folders/.../T/opencode/video-edit/
-PATH: `export PATH="$HOME/.npm-global/bin:$PATH"`
+WORKDIR: pasta de trabalho temporária (ex.: `/tmp/video-edit/` no macOS/Linux,
+`%TEMP%\video-edit\` no Windows).
+
+PATH: no macOS/Linux, `export PATH="$HOME/.npm-global/bin:$PATH"`.
+
+Plataforma: os scripts `render.sh` são bash — rode tudo no macOS/Linux, ou no
+Windows via Git Bash / WSL. Os scripts `.py` rodam em qualquer sistema.
 
 ### 1. Transcrever
 ```
