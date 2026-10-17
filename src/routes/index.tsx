@@ -45,8 +45,8 @@ const workshopPrompts: PromptCard[] = [
     id: "w-atividade",
     category: "Workshop",
     title: "Atividade interativa",
-    description: "Flashcards clicáveis do seu tema, prontos para projetar em aula.",
-    body: `Crie um arquivo HTML único (CSS e JS dentro do próprio arquivo, sem dependências externas) de flashcards interativos para minha turma:
+    description: "Use com o agente Visu: flashcards clicáveis do seu tema, prontos para projetar.",
+    body: `Visu, crie flashcards interativos para minha turma (use o agente Visu para gerar o visual):
 
 - Idioma: [INGLÊS]
 - Nível: [A1]

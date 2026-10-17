@@ -1,10 +1,10 @@
-# Prompt 01 — ATIVIDADE interativa (flashcards)
+# Prompt 01 — ATIVIDADE interativa (flashcards) — usar com o agente Visu
 
-Copie e cole no OpenCode. Troque só o que está entre [colchetes].
+Copie e cole no OpenCode com o agente Visu ativo. Troque só o que está entre [colchetes].
 
 ---
 
-Crie um arquivo HTML único (CSS e JS dentro do próprio arquivo, sem dependências externas) de flashcards interativos para minha turma:
+Visu, crie flashcards interativos para minha turma (use o agente Visu para gerar o visual):
 
 - Idioma: [INGLÊS]
 - Nível: [A1]
