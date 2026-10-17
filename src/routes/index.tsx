@@ -260,6 +260,14 @@ const teacherSkills: SkillCard[] = [
     tag: "imagens",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/imager",
   },
+  {
+    id: "t-notion",
+    category: "Para professores",
+    title: "Notion bonito",
+    description: "Deixa sua página Notion bonita: callouts, colunas, títulos coloridos e tabelas.",
+    tag: "notion",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/notion-beautifier",
+  },
 ];
 
 const PROMPT_GROUP_ORDER = ["Workshop", "Para professores"];
