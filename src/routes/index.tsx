@@ -6,10 +6,10 @@ import { cn, copyToClipboard } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The OpenCode Library" },
-      { name: "description", content: "Copy, paste, make them yours. The resource page for paid subscribers of OpenCode by Chris Castelli." },
-      { property: "og:title", content: "The OpenCode Library" },
-      { property: "og:description", content: "Copy, paste, make them yours. The resource page for paid subscribers of OpenCode by Chris Castelli." },
+      { title: "Biblioteca OpenCode" },
+      { name: "description", content: "Copie, cole, faça seu. Os prompts, skills e agentes do Workshop Material Autoral, por Chris Castelli." },
+      { property: "og:title", content: "Biblioteca OpenCode" },
+      { property: "og:description", content: "Copie, cole, faça seu. Os prompts, skills e agentes do Workshop Material Autoral, por Chris Castelli." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -129,201 +129,177 @@ Regras:
 const teacherPrompts: PromptCard[] = [
   {
     id: "t-worksheet",
-    category: "For teachers",
-    title: "Make a worksheet",
-    description: "A ready worksheet for your class, with space to fill in.",
-    body: `Make a worksheet about [TOPIC] for [AGE OR LEVEL]. Mix exercise types, like multiple choice, fill in the blanks, matching and a short writing task, and leave space for students to write their answers. Keep the instructions in English and simple enough for the level. Save it as a printable file, with the answer key at the end so students don't see it.`,
+    category: "Para professores",
+    title: "Atividade para aula",
+    description: "Worksheet pronta para sua turma, com espaço para responder.",
+    body: `Monte uma atividade sobre [TEMA] para [IDADE OU NÍVEL]. Misture tipos de exercício: múltipla escolha, complete as lacunas, relacione as colunas e uma escrita curta. Deixe espaço para o aluno responder. Instruções simples, no nível da turma. Salve em arquivo pronto para imprimir, com o gabarito no fim, separado da cópia do aluno.`,
   },
   {
     id: "t-exam",
-    category: "For teachers",
-    title: "Build an exam",
-    description: "An English exam in the school format, ready to use.",
-    body: `Build an exam about [TOPIC] for [LEVEL]. Use multiple choice questions, numbered tasks with their point values marked, and a reading section with a short text and questions about it. Note the total score at the top. Save it as a printable file, with the answer key at the end, clearly separated so it's not on the student's copy.`,
+    category: "Para professores",
+    title: "Prova pronta",
+    description: "Prova no formato escolar, pronta para aplicar.",
+    body: `Monte uma prova sobre [TEMA] para [NÍVEL]. Use questões de múltipla escolha, tarefas numeradas com o valor de cada uma e uma seção de leitura com texto curto + perguntas. Nota total no topo. Salve em arquivo pronto para imprimir, com o gabarito no fim, separado da cópia do aluno.`,
   },
   {
     id: "t-discussion",
-    category: "For teachers",
-    title: "Discussion questions",
-    description: "Questions that make the next class actually talk.",
-    body: `Based on [MATERIAL], give me questions to discuss in the next class. Make them open-ended so students can't answer with just yes or no: a few about understanding the material, a few asking for opinions, and one or two that connect it to their own lives. Give me around ten, grouped by theme, and flag the two that will spark the most debate.`,
+    category: "Para professores",
+    title: "Perguntas para debate",
+    description: "Perguntas que fazem a próxima aula realmente conversar.",
+    body: `Com base em [MATERIAL], me dê perguntas para debater na próxima aula. Abertas, sem resposta sim ou não: algumas de compreensão, algumas de opinião e uma ou duas ligando com a vida deles. Umas dez no total, agrupadas por tema, marcando as duas que vão render mais debate.`,
   },
   {
     id: "t-lesson",
-    category: "For teachers",
-    title: "Plan a lesson",
-    description: "A structured lesson, from topic to activity to assessment.",
-    body: `Turn [TOPIC] into a lesson plan for [AGE OR LEVEL]. Start with one clear learning objective. Then give me the plan in time blocks: a short opener, two or three main activities, and a quick wrap-up, with the minutes for each and what I need to prepare. End with a one-line assessment I can use to see if the lesson worked.`,
+    category: "Para professores",
+    title: "Plano de aula",
+    description: "Do tema à atividade e à avaliação, com tempo de cada parte.",
+    body: `Transforme [TEMA] em um plano de aula para [IDADE OU NÍVEL]. Comece com 1 objetivo claro. Depois o plano em blocos de tempo: abertura curta, 2 ou 3 atividades principais e fechamento rápido, com minutos de cada parte e o que preparar. Termine com 1 avaliação de 1 linha para ver se a aula funcionou.`,
   },
   {
     id: "t-retrieval",
-    category: "For teachers",
-    title: "Retrieval opener",
-    description: "A quick quiz to start the lesson and see what stuck.",
-    body: `Make a quick retrieval quiz on [TOPIC] to start the lesson. Five questions, going from easy to harder, mixing types like fill in the blank, multiple choice and one recall question. Keep it under five minutes. Put the answers at the end so I can mark it quickly.`,
+    category: "Para professores",
+    title: "Quiz de abertura",
+    description: "Quiz rápido para abrir a aula e ver o que ficou.",
+    body: `Monte um quiz rápido de revisão sobre [TEMA] para abrir a aula. 5 perguntas, do fácil ao difícil, misturando completar, múltipla escolha e 1 de memória. Coisa de 5 minutos. Respostas no fim para corrigir rápido.`,
   },
   {
     id: "t-game",
-    category: "For teachers",
-    title: "Build me a game",
-    description: "Make a simple game, for whatever you need it for.",
-    body: `Make a game for me. Keep it simple and fun, and build it as a single file I can open without installing anything. Tell me how to open it. I'll tell you what I want it for. When I send you new ideas, add them to the same game instead of starting over, and test it after each change so nothing breaks.`,
+    category: "Para professores",
+    title: "Jogo para aula",
+    description: "Um jogo simples em 1 arquivo, sem instalar nada.",
+    body: `Monte um jogo para mim. Simples e divertido, em 1 arquivo só que eu abra sem instalar nada. Me diga como abrir. Eu digo para que eu quero. Quando eu mandar ideias novas, some no mesmo jogo em vez de recomeçar, e teste a cada mudança para nada quebrar.`,
   },
 ];
 
 const teacherSkills: SkillCard[] = [
   {
-    id: "t-dic-en",
-    category: "For teachers",
-    title: "English dictionary",
-    description: "Defines English words with Portuguese translation, and Portuguese words with English definition + example.",
-    tag: "dictionary",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/dicionario-ingles",
-  },
-  {
-    id: "t-dic-fr",
-    category: "For teachers",
-    title: "French dictionary",
-    description: "Defines French words with Portuguese translation, and Portuguese words with French definition + example.",
-    tag: "dictionary",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/dicionario-frances",
-  },
-  {
-    id: "t-dic-it",
-    category: "For teachers",
-    title: "Italian dictionary",
-    description: "Defines Italian words with Portuguese translation, and Portuguese words with Italian definition + example.",
-    tag: "dictionary",
-    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/dicionario-italiano",
-  },
-  {
     id: "t-exam-skill",
-    category: "For teachers",
-    title: "Exam builder",
-    description: "Builds English exams in the school format, ready to use.",
-    tag: "tests",
+    category: "Para professores",
+    title: "Montador de provas",
+    description: "Monta provas de inglês no formato escolar, prontas para usar.",
+    tag: "provas",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/murilo-prova",
   },
   {
     id: "t-discussion-skill",
-    category: "For teachers",
-    title: "Discussion questions",
-    description: "Generates discussion questions for your next class.",
-    tag: "class",
+    category: "Para professores",
+    title: "Perguntas para debate",
+    description: "Gera perguntas para discutir na próxima aula.",
+    tag: "aula",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/perguntas-para-aula",
   },
   {
     id: "t-lesson-skill",
-    category: "For teachers",
-    title: "Lesson plans",
-    description: "Turns a topic into a structured lesson plan with timing and activities.",
-    tag: "lessons",
+    category: "Para professores",
+    title: "Planos de aula",
+    description: "Transforma um tema em plano de aula com tempo e atividades.",
+    tag: "aulas",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/teaching-lesson-plan",
   },
   {
     id: "t-retrieval-skill",
-    category: "For teachers",
-    title: "Retrieval practice",
-    description: "Quick revision quizzes at different difficulties.",
-    tag: "revision",
+    category: "Para professores",
+    title: "Revisão rápida",
+    description: "Quizzes curtos de revisão em vários níveis.",
+    tag: "revisão",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/retrieval-practice-generator",
   },
   {
     id: "t-vocab-skill",
-    category: "For teachers",
-    title: "Vocabulary tiers",
-    description: "Sorts the words in a text into everyday, academic and technical, so you know what to teach first.",
-    tag: "vocabulary",
+    category: "Para professores",
+    title: "Níveis de vocabulário",
+    description: "Separa as palavras de um texto por nível, para ensinar primeiro o essencial.",
+    tag: "vocabulário",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/vocabulary-tiering-tool",
   },
   {
     id: "t-worksheet-skill",
-    category: "For teachers",
-    title: "Worksheets",
-    description: "Student worksheets and vocabulary homework, ready to fill in.",
-    tag: "worksheets",
+    category: "Para professores",
+    title: "Atividades",
+    description: "Worksheets e lição de casa de vocabulário, prontas para preencher.",
+    tag: "atividades",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/licao-de-casa",
   },
   {
     id: "t-roteirista",
-    category: "For teachers",
+    category: "Para professores",
     title: "Roteirista de aulas",
-    description: "Turns a raw idea into a full recording-ready lesson script, in Portuguese.",
-    tag: "scripts",
+    description: "Transforma uma ideia solta em roteiro completo, pronto para gravar.",
+    tag: "roteiros",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/roteirista-aulas",
   },
   {
     id: "t-homework",
-    category: "For teachers",
+    category: "Para professores",
     title: "Homework",
-    description: "Generates lesson homework from a Notion page: gap fill, match, true or false.",
-    tag: "homework",
+    description: "Gera lição de casa a partir da página Notion: gap fill, match, true ou false.",
+    tag: "lição de casa",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/homework",
   },
   {
     id: "t-corretor",
-    category: "For teachers",
+    category: "Para professores",
     title: "Corretor",
-    description: "Corrects student homework inline on a Notion page, including gabarito check.",
-    tag: "correction",
+    description: "Corrige a lição do aluno direto na página Notion, com conferência de gabarito.",
+    tag: "correção",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/corretor",
   },
   {
     id: "t-elvis",
-    category: "For teachers",
+    category: "Para professores",
     title: "Elvis",
-    description: "Generates lesson audio with ElevenLabs and attaches it to the Notion page.",
-    tag: "audio",
+    description: "Gera o áudio da lição e anexa na página Notion.",
+    tag: "áudio",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/elvis",
   },
   {
     id: "t-imager",
-    category: "For teachers",
+    category: "Para professores",
     title: "Imager",
-    description: "Illustrates a Notion lesson with free stock photos, one per scene.",
-    tag: "images",
+    description: "Ilustra a lição com fotos gratuitas, uma por cena.",
+    tag: "imagens",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/tree/main/skills/imager",
   },
 ];
 
-const PROMPT_GROUP_ORDER = ["Workshop", "For teachers"];
+const PROMPT_GROUP_ORDER = ["Workshop", "Para professores"];
 
 const agentSkills: SkillCard[] = [
   {
     id: "a-dicien",
-    category: "Agents",
-    title: "Dicien agent",
-    description: "English-Portuguese dictionary agent. Just type the word, get translation + examples.",
-    tag: "agent",
+    category: "Agentes",
+    title: "Dicien",
+    description: "Dicionário inglês-português. É só digitar a palavra: tradução + exemplos.",
+    tag: "agente",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/dicien.md",
   },
   {
     id: "a-dicifr",
-    category: "Agents",
-    title: "Dicifr agent",
-    description: "French-Portuguese dictionary agent. Just type the word, get translation + examples.",
-    tag: "agent",
+    category: "Agentes",
+    title: "Dicifr",
+    description: "Dicionário francês-português. É só digitar a palavra: tradução + exemplos.",
+    tag: "agente",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/dicifr.md",
   },
   {
     id: "a-diciit",
-    category: "Agents",
-    title: "Diciit agent",
-    description: "Italian-Portuguese dictionary agent. Just type the word, get translation + examples.",
-    tag: "agent",
+    category: "Agentes",
+    title: "Diciit",
+    description: "Dicionário italiano-português. É só digitar a palavra: tradução + exemplos.",
+    tag: "agente",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/diciit.md",
   },
   {
     id: "a-visu",
-    category: "Agents",
-    title: "Visu agent",
-    description: "Turns any topic or notes into an interactive visual: decks, infographics, timelines.",
-    tag: "agent",
+    category: "Agentes",
+    title: "Visu",
+    description: "Transforma qualquer tema em visual: slides, infográficos, timelines.",
+    tag: "agente",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/visu.md",
   },
 ];
 
-const SKILL_GROUP_ORDER = ["For teachers", "Agents"];
+const SKILL_GROUP_ORDER = ["Para professores", "Agentes"];
 
 function groupByCategory<T extends { category: string }>(items: T[], order: string[]) {
   return order
@@ -345,7 +321,7 @@ function OpenCodeLibraryPage() {
         <HeroCard />
         <HowToUseCard />
 
-        <section aria-label={activeTab === "prompts" ? "Prompts" : "Skills"} className="mt-8">
+        <section aria-label={activeTab === "prompts" ? "Prompts" : "Skills e agentes"} className="mt-8">
           {activeTab === "prompts" ? (
             <div className="flex flex-col gap-8">
               {promptGroups.map((group) => (
@@ -379,18 +355,18 @@ function TopBar({ activeTab, onTabChange }: { activeTab: Tab; onTabChange: (tab:
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-[900px] flex-col items-start justify-between gap-4 px-4 py-4 md:flex-row md:items-center">
-        <span className="font-display text-lg font-bold text-foreground">The OpenCode Library</span>
+        <span className="font-display text-lg font-bold text-foreground">Biblioteca OpenCode</span>
 
         <nav
           role="tablist"
-          aria-label="Resource sections"
+          aria-label="Seções"
           className="flex w-full gap-2 md:w-auto"
         >
           <TabButton active={activeTab === "prompts"} onClick={() => onTabChange("prompts")}>
             Prompts
           </TabButton>
           <TabButton active={activeTab === "skills"} onClick={() => onTabChange("skills")}>
-            Skills
+            Skills e agentes
           </TabButton>
         </nav>
       </div>
@@ -437,16 +413,16 @@ function HeroCard() {
   return (
     <article className="rounded-[24px] border border-border bg-card p-6 shadow-sm md:p-10">
       <span className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground">
-        Workshop Material Autoral · for language teachers
+        Workshop Material Autoral · para professores de idiomas
       </span>
       <h1 className="mt-4 font-display text-[48px] font-extrabold leading-[1.05] text-foreground md:text-[64px]">
-        The OpenCode{" "}
-        <span className="font-editorial text-chai">Library</span>
+        A Biblioteca{" "}
+        <span className="font-editorial text-chai">OpenCode</span>
       </h1>
-      <p className="mt-3 text-[17px] font-semibold text-foreground">copy, paste, make them yours.</p>
+      <p className="mt-3 text-[17px] font-semibold text-foreground">copie, cole, faça seu.</p>
       <p className="mt-4 max-w-[620px] text-[17px] leading-relaxed text-muted-foreground">
-        This is where workshop teachers grab the exact prompts, skills and agents from the class.
-        No fluff. Just open the right tab, copy what you need, and paste it in.
+        Aqui estão os prompts, skills e agentes do workshop, prontos para usar.
+        Abra a aba certa, copie o que precisa e cole no OpenCode.
       </p>
     </article>
   );
@@ -455,11 +431,11 @@ function HeroCard() {
 function HowToUseCard() {
   return (
     <article className="mt-6 rounded-[24px] bg-cream p-6 md:p-8">
-      <h2 className="font-display text-2xl font-bold text-foreground">How to use</h2>
+      <h2 className="font-display text-2xl font-bold text-foreground">Como usar</h2>
       <ol className="mt-5 grid list-none gap-5 sm:grid-cols-3">
-        <Step number="01" text="Open the right tab" />
-        <Step number="02" text="Copy the card you need" />
-        <Step number="03" text="Paste it into OpenCode and watch it work" />
+        <Step number="01" text="Abra a aba certa" />
+        <Step number="02" text="Copie o cartão que precisa" />
+        <Step number="03" text="Cole no OpenCode e veja funcionar" />
       </ol>
     </article>
   );
@@ -497,12 +473,12 @@ function PromptCard({ prompt }: { prompt: PromptCard }) {
           {copied ? (
             <>
               <Check className="h-3.5 w-3.5" />
-              Copied
+              Copiado
             </>
           ) : (
             <>
               <Copy className="h-3.5 w-3.5" />
-              Copy prompt
+              Copiar prompt
             </>
           )}
         </button>
@@ -566,7 +542,7 @@ function SkillCardComponent({ skill }: { skill: SkillCard }) {
             )}
           >
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            {copied ? "Copied" : "Copy"}
+            {copied ? "Copiado" : "Copiar"}
           </button>
           <a
             href={skill.githubUrl}
@@ -574,7 +550,7 @@ function SkillCardComponent({ skill }: { skill: SkillCard }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Open link
+            Abrir link
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>
@@ -588,11 +564,11 @@ function FinalCTA() {
     <article className="mt-10 rounded-[24px] bg-ink p-6 text-warm-beige md:p-10">
       <span className="text-xs font-bold uppercase tracking-[0.15em] text-chai">Workshop Material Autoral</span>
       <h2 className="mt-4 font-display text-[32px] font-bold leading-[1.1] md:text-[40px]">
-        Copy, paste,{" "}
-        <span className="font-editorial text-chai">make them yours</span>.
+        Copie, cole,{" "}
+        <span className="font-editorial text-chai">faça seu</span>.
       </h2>
       <p className="mt-4 max-w-[620px] text-[17px] leading-relaxed text-warm-beige/80">
-        Take what works. Ignore what doesn't. Build your own OpenCode workflow, one copy at a time.
+        Pegue o que funciona. Ignore o resto. Monte seu fluxo no OpenCode, uma cópia de cada vez.
       </p>
       <div className="mt-8 border-t border-warm-beige/10 pt-6">
         <p className="text-sm font-semibold text-warm-beige/90">Chris Castelli · @profchriscastelli</p>
