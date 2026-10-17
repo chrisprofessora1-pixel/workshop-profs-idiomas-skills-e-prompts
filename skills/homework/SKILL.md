@@ -10,7 +10,9 @@ description: Use when the user says Homework, faz exercicios, homework, lesson e
 Homework turns a Notion lesson page into homework exercises on a target
 Notion page. Invoke with: "Homework, make exercises for <lesson link> here:
 <target link>". Pair with the `corretor` skill when correcting,
-and with `elvis` when the homework needs audio.
+with `elvis` when the homework needs audio,
+and with `biner` (notion-beautifier) to give the final page the polished
+"notion bonito" look — see the Notion look section below.
 
 ## Workflow
 
@@ -39,6 +41,11 @@ and with `elvis` when the homework needs audio.
 5. **Report**: what was added, answers/gabarito in chat when asked. Always
    keep a gabarito (ordered answers per exercise) ready — the teacher
    asks for it constantly.
+6. **Beautify (notion bonito)**: after the exercises are pushed, load the
+   `biner` skill (notion-beautifier) and apply its design system to the page
+   (CREATE for a fresh page, BEAUTIFY for one that already exists). It only
+   changes the look — never the exercises, answers, or the one-cue rule.
+   Skip it only if the teacher says she wants it plain.
 
 ## Formatting (never break — teacher loves this)
 
@@ -74,6 +81,28 @@ and with `elvis` when the homework needs audio.
 - Bullet points inside a callout must be REAL `bulleted_list_item` child
   blocks of the callout — never typed `- ` hyphens (they render as plain
   text and look broken).
+
+## Notion look — pair with `biner` (notion-beautifier)
+
+The formatting rules above are the teacher's house style and always win for
+exercise content. On top of them, load the `biner` skill (notion-beautifier)
+so the page looks polished, not just correct:
+
+- **Fresh homework page** → load `biner`, mode CREATE, and lay it out with
+  its design system (intro/hero layout, colored headings, callouts, columns
+  for match exercises, toggles for the gabarito and answer keys).
+- **Existing page that looks flat**, or the teacher says "notion bonito" /
+  "beautify" / "deixa bonito" → load `biner`, mode BEAUTIFY: fetch the page,
+  keep every block, only restructure into the design system. Never drop
+  content.
+- **Workspace / database level** (homework hub, filtered views, the
+  "X - Homework" database) → load `notion-homework-pages` (notion-pages-skill)
+  for the page/database architecture.
+
+Rule of precedence: exercise content and the formatting rules above beat the
+beautifier. `biner` changes the look, never the exercises, the answers, or
+the one-cue-per-exercise rule. Never let a beautify pass wipe audio/image
+blocks — re-append them if a rewrite happens (see Editing safety).
 
 ## Editing safety (incident 2026-10-16 — never break)
 
