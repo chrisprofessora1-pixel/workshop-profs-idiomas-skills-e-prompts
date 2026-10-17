@@ -1,6 +1,6 @@
 ---
 name: squad-stories-fera
-description: Gera stories de bastidores para Instagram. Usa foto real fornecida pelo mentor como fundo, com safe zones corretas para anúncio. Copy em 5 camadas: headline, subheadline, contexto em bullets, ponte e CTA.
+description: "Gera stories de bastidores para Instagram. Usa foto real fornecida pelo mentor como fundo, com safe zones corretas para anúncio. Copy em 5 camadas: headline, subheadline, contexto em bullets, ponte e CTA."
 ---
 
 # Squad Stories Fera

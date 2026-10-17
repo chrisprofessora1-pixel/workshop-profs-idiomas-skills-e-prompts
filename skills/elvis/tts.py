@@ -7,11 +7,11 @@ Usage:
   tts.py --voice teacher --file /tmp/script.txt --out lesson.mp3 --attach <notion-page-id>
 
 Voices: teacher (American Teacher), francais (Prof de français), or a raw voice ID.
-Key: read from /Users/maria/.config/elevenlabs_key (chmod 600, never printed).
+Key: read from ~/.config/elevenlabs_key (chmod 600, never printed).
 """
 import argparse, json, os, subprocess, sys, urllib.request, urllib.error
 
-KEY_FILE = "/Users/maria/.config/elevenlabs_key"
+KEY_FILE = os.path.expanduser("~/.config/elevenlabs_key")
 VOICES = {
     "teacher": "ygJ6KeHyX2fupNmZ7V8m",   # American Teacher (EN lessons)
     "francais": "eKxxLqrrIIlLJm9gHteO",  # Prof de français (FR lessons)

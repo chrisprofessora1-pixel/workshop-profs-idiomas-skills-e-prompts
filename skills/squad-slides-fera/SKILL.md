@@ -1,6 +1,6 @@
 ---
 name: squad-slides-fera
-description: Gera apresentações de slides para o mentor. Slides HTML premium com animações CSS. Usos: pitch de venda ao vivo, aula/conteúdo, webinar, apresentação de proposta. Exporta PNG por slide ou vídeo animado via FFmpeg.
+description: "Gera apresentações de slides para o mentor. Slides HTML premium com animações CSS. Usos: pitch de venda ao vivo, aula/conteúdo, webinar, apresentação de proposta. Exporta PNG por slide ou vídeo animado via FFmpeg."
 ---
 
 # Squad Slides Fera

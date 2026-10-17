@@ -11,26 +11,27 @@ Elvis generates lesson audio with ElevenLabs and attaches it to Notion pages.
 
 ## Script
 
-`/Users/maria/.agents/skills/elvis/tts.py` (python3, stdlib only).
+`tts.py`, in this same folder (python3, stdlib only). Run the commands below
+from inside this skill's folder (where `tts.py` lives).
 
 ```bash
 # English lesson (American Teacher)
-python3 /Users/maria/.agents/skills/elvis/tts.py \
+python3 tts.py \
   --voice teacher --file /tmp/script.txt --out lesson.mp3
 
 # French lesson (Prof de français)
-python3 /Users/maria/.agents/skills/elvis/tts.py \
+python3 tts.py \
   --voice francais --file /tmp/script-fr.txt --out lesson-fr.mp3
 
 # Generate AND attach as audio block to a Notion page
-python3 /Users/maria/.agents/skills/elvis/tts.py \
+python3 tts.py \
   --voice teacher --file /tmp/script.txt --out lesson.mp3 \
   --attach 3fa32ffa-5828-8000-b533-dd3edd5cd0a7
 ```
 
 ## Rules
 
-- Key lives in `/Users/maria/.config/elevenlabs_key` (chmod 600). Never print, log, or paste it.
+- Key lives in `~/.config/elevenlabs_key` (chmod 600). Never print, log, or paste it.
 - Voices: `teacher` = American Teacher (`ygJ6KeHyX2fupNmZ7V8m`), `francais` = Prof de français (`eKxxLqrrIIlLJm9gHteO`). A raw voice ID also works.
 - Model default `eleven_multilingual_v2` (handles EN + FR).
 - Script text should be clean narration (no markdown, no blanks). Strip `________`, callouts, and tables before sending.

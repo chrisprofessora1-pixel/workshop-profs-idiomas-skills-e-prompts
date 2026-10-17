@@ -1,6 +1,6 @@
 ---
 name: brand-kit
-description: Apply Chris Castelli's brand kit to anything you create: exact colors, fonts and voice rules. Use for designs, carousels, Notion pages, posts or any content that should look and sound like Chris Castelli (@profchriscastelli).
+description: "Apply Chris Castelli's brand kit to anything you create: exact colors, fonts and voice rules. Use for designs, carousels, Notion pages, posts or any content that should look and sound like Chris Castelli (@profchriscastelli)."
 ---
 
 # Brand Kit

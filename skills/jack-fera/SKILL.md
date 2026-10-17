@@ -1,6 +1,6 @@
 ---
 name: jack-fera
-description: Gera landing pages e páginas de venda completas personalizadas para o mentor. 9 seções: hero, dor, solução, mecanismo, prova social, oferta, bônus, garantia, CTA. Dark premium. Deploy via Netlify opcional.
+description: "Gera landing pages e páginas de venda completas personalizadas para o mentor. 9 seções: hero, dor, solução, mecanismo, prova social, oferta, bônus, garantia, CTA. Dark premium. Deploy via Netlify opcional."
 ---
 
 # Jack Fera
