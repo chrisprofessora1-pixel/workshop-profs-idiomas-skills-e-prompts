@@ -305,6 +305,14 @@ const agentSkills: SkillCard[] = [
     tag: "agente",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/visu.md",
   },
+  {
+    id: "a-prompter",
+    category: "Agentes",
+    title: "Prompter",
+    description: "Pega seu rascunho de prompt fraco e devolve uma versão pronta para colar.",
+    tag: "agente",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/prompter.md",
+  },
 ];
 
 const SKILL_GROUP_ORDER = ["Para professores", "Agentes"];
