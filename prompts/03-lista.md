@@ -18,7 +18,7 @@ Estrutura obrigatória (5 blocos):
 4. 🟦 Regra rápida (1 frase, ex: maiúscula em nomes)
 5. 🟪 Dica + mini-exercício de 5 linhas no rodapé (completar letra, soletrar nome)
 
-Formato: HTML único + CSS inline, pronto para A4 paisagem, com badge "Nível A1" e assinatura @profchriscastelli.
+Formato: HTML único + CSS inline, pronto para A4 paisagem, com badge "Nível A1" e assinatura [SEU NOME].
 Salve como `ficha-[tema].html` e me diga como gerar o PDF.
 
 Padrão visual: cards coloridos, círculo central com o tema, fonte grande para projetar.

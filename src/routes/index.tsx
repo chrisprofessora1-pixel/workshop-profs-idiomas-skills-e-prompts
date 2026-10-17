@@ -45,7 +45,7 @@ const workshopPrompts: PromptCard[] = [
     id: "w-atividade",
     category: "Workshop",
     title: "Atividade interativa",
-    description: "Use com o agente Visu: flashcards clicáveis do seu tema, prontos para projetar.",
+    description: "Versão completa, use com o agente Visu: flashcards clicáveis do seu tema, prontos para projetar.",
     body: `Visu, crie flashcards interativos para minha turma (use o agente Visu para gerar o visual):
 
 - Idioma: [INGLÊS]
@@ -57,7 +57,7 @@ Regras do material:
 1. Cada card tem FRENTE (palavra base) e VERSO (resposta + tradução curta em pt-BR).
 2. Clique vira o card (efeito flip). Inclua botão de embaralhar e filtros por grupo.
 3. Visual simples para projetar: fundo claro, fonte grande, 1 instrução no topo.
-4. No topo: título + nível + meu nome [@profchriscastelli].
+4. No topo: título + nível + meu nome [[SEU NOME]].
 5. No final: 1 dica de uso em aula em 2 linhas.
 6. Salve como atividade-[tema].html e me diga como abrir e imprimir em PDF.`,
   },
@@ -65,7 +65,7 @@ Regras do material:
     id: "w-prova",
     category: "Workshop",
     title: "Prova com gabarito",
-    description: "Prova justa de 30 minutos + gabarito com critérios de correção.",
+    description: "Versão completa: prova justa de 30 minutos + gabarito com critérios de correção.",
     body: `Crie uma prova + gabarito para minha turma:
 
 - Idioma: [INGLÊS]
@@ -85,7 +85,7 @@ Regras:
     id: "w-lista",
     category: "Workshop",
     title: "Lista de vocabulário",
-    description: "Ficha A1 em 5 blocos no seu molde, pronta para A4 paisagem.",
+    description: "Versão completa no seu molde: ficha A1 em 5 blocos, pronta para A4 paisagem.",
     body: `Crie uma ficha de vocabulário no meu molde A1 (página única, estilo mapa mental):
 
 - Idioma: [INGLÊS]
@@ -100,7 +100,7 @@ Estrutura obrigatória (5 blocos):
 4. Regra rápida (1 frase)
 5. Dica + mini-exercício de 5 linhas no rodapé
 
-Formato: HTML único + CSS inline, pronto para A4 paisagem, com badge "Nível A1" e assinatura @profchriscastelli. Salve como ficha-[tema].html e me diga como gerar o PDF.`,
+Formato: HTML único + CSS inline, pronto para A4 paisagem, com badge "Nível A1" e assinatura [SEU NOME]. Salve como ficha-[tema].html e me diga como gerar o PDF.`,
   },
   {
     id: "w-listening",
@@ -131,14 +131,14 @@ const teacherPrompts: PromptCard[] = [
     id: "t-worksheet",
     category: "Para professores",
     title: "Atividade para aula",
-    description: "Worksheet pronta para sua turma, com espaço para responder.",
+    description: "Versão rápida: worksheet pronta para sua turma, com espaço para responder.",
     body: `Monte uma atividade sobre [TEMA] para [IDADE OU NÍVEL]. Misture tipos de exercício: múltipla escolha, complete as lacunas, relacione as colunas e uma escrita curta. Deixe espaço para o aluno responder. Instruções simples, no nível da turma. Salve em arquivo pronto para imprimir, com o gabarito no fim, separado da cópia do aluno.`,
   },
   {
     id: "t-exam",
     category: "Para professores",
     title: "Prova pronta",
-    description: "Prova no formato escolar, pronta para aplicar.",
+    description: "Versão rápida: prova no formato escolar, pronta para aplicar.",
     body: `Monte uma prova sobre [TEMA] para [NÍVEL]. Use questões de múltipla escolha, tarefas numeradas com o valor de cada uma e uma seção de leitura com texto curto + perguntas. Nota total no topo. Salve em arquivo pronto para imprimir, com o gabarito no fim, separado da cópia do aluno.`,
   },
   {
@@ -167,7 +167,7 @@ const teacherPrompts: PromptCard[] = [
     category: "Para professores",
     title: "Jogo para aula",
     description: "Um jogo simples em 1 arquivo, sem instalar nada.",
-    body: `Monte um jogo para mim. Simples e divertido, em 1 arquivo só que eu abra sem instalar nada. Me diga como abrir. Eu digo para que eu quero. Quando eu mandar ideias novas, some no mesmo jogo em vez de recomeçar, e teste a cada mudança para nada quebrar.`,
+    body: `Monte um jogo para [PARA QUE: ex. revisar comparatives com A1] com [NÍVEL]. Simples e divertido, em 1 arquivo só que eu abra sem instalar nada. Me diga como abrir. Quando eu mandar ideias novas, some no mesmo jogo em vez de recomeçar, e teste a cada mudança para nada quebrar.`,
   },
 ];
 
