@@ -171,6 +171,64 @@ const teacherPrompts: PromptCard[] = [
   },
 ];
 
+const builderPrompts: PromptCard[] = [
+  {
+    id: "c-skill-nova",
+    category: "Criar e modificar",
+    title: "Criar skill nova",
+    description: "Transforme sua rotina repetida em skill reutilizável, pronta para chamar em 1 frase.",
+    body: `Crie uma skill nova para meu OpenCode:
+
+- Nome da skill: [NOME CURTO, ex: quiz-rapido]
+- Quando usar: [QUANDO CHAMAR, ex: quando eu disser "Quiz rapido sobre..."]
+- O que ela faz: [DESCREVA EM 2 LINHAS, ex: gera 5 perguntas do facil ao dificil + gabarito no fim]
+- Formato de saida: [ex: markdown pronto para imprimir, com gabarito separado]
+- Exemplo real: [COLE 1 EXEMPLO BOM SEU, ou escreva "use meu padrao de prova"]
+
+Regras:
+1. Gere a pasta skills/[NOME]/ com SKILL.md completo: nome, descricao com gatilhos em PT, workflow em passos numerados.
+2. Deixe os gatilhos em portugues do jeito que eu falo (ex: "faz quiz", "monta prova").
+3. No fim, me diga como testar em 1 frase e como chamar a skill depois.
+4. Nada de teoria. So entregue a skill pronta.`,
+  },
+  {
+    id: "c-modificar-agente",
+    category: "Criar e modificar",
+    title: "Modificar agente",
+    description: "Ajuste um agente pronto para falar do seu jeito e fazer do seu jeito.",
+    body: `Modifique este agente do meu OpenCode para meu jeito de dar aula:
+
+- Agente: [NOME, ex: Dicien / Visu / Homework / Corretor]
+- O que manter: [ex: formato atual, tom direto]
+- O que mudar: [ex: exemplos mais curtos, sempre com traducao, sempre com audio]
+- Meu padrao: [COLE 1 EXEMPLO DO SEU GOSTO ou escreva "siga minha ultima ficha"]
+
+Regras:
+1. Abra o arquivo agents/[NOME].md ou skills/[NOME]/SKILL.md e mostre o que vai mudar antes de mudar.
+2. Edite so o necessario. Nao reescreva tudo.
+3. Mantenha os gatilhos antigos funcionando e adicione meus novos gatilhos em PT.
+4. No fim, me diga como testar com 1 comando e o que mudou em 3 bullets.`,
+  },
+  {
+    id: "c-criar-agente",
+    category: "Criar e modificar",
+    title: "Criar agente pessoal",
+    description: "Crie seu assistente com nome, jeito e rotina, pronto para chamar pelo nome.",
+    body: `Crie um agente novo para meu OpenCode:
+
+- Nome do agente: [ex: Roteirista]
+- Quando chamar: [ex: quando eu disser "Roteirista, ..."]
+- Personalidade: [ex: direto, pratico, sem teoria]
+- Rotina: [DESCREVA EM 3 PASSOS, ex: 1 entende tema e nivel, 2 gera roteiro com tempos, 3 entrega arquivo pronto]
+- Exemplo de entrada e saida: [COLE 1 EXEMPLO CURTO]
+
+Regras:
+1. Gere agents/[NOME].md com descricao, gatilhos em PT e rotina em passos.
+2. Deixe o agente pronto para chamar pelo nome em qualquer conversa.
+3. No fim, me diga como testar com 1 frase e como modificar depois.`,
+  },
+];
+
 const teacherSkills: SkillCard[] = [
   {
     id: "t-exam-skill",
@@ -270,7 +328,7 @@ const teacherSkills: SkillCard[] = [
   },
 ];
 
-const PROMPT_GROUP_ORDER = ["Workshop", "Para professores"];
+const PROMPT_GROUP_ORDER = ["Workshop", "Para professores", "Criar e modificar"];
 
 const agentSkills: SkillCard[] = [
   {
@@ -326,7 +384,7 @@ function groupByCategory<T extends { category: string }>(items: T[], order: stri
 function OpenCodeLibraryPage() {
   const [activeTab, setActiveTab] = useState<Tab>("prompts");
 
-  const promptGroups = groupByCategory([...workshopPrompts, ...teacherPrompts], PROMPT_GROUP_ORDER);
+  const promptGroups = groupByCategory([...workshopPrompts, ...teacherPrompts, ...builderPrompts], PROMPT_GROUP_ORDER);
   const skillGroups = groupByCategory([...teacherSkills, ...agentSkills], SKILL_GROUP_ORDER);
 
   return (
