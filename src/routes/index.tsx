@@ -371,6 +371,14 @@ const agentSkills: SkillCard[] = [
     tag: "agente",
     githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/prompter.md",
   },
+  {
+    id: "a-examinador",
+    category: "Agentes",
+    title: "Examinador",
+    description: "Clona sua prova modelo e gera simulados novos com conteúdo novo, no mesmo formato.",
+    tag: "agente",
+    githubUrl: "https://github.com/chrisprofessora1-pixel/workshop-profs-idiomas-skills-e-prompts/blob/main/agents/examinador.md",
+  },
 ];
 
 const SKILL_GROUP_ORDER = ["Para professores", "Agentes"];
