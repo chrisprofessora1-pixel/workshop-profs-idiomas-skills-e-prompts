@@ -50,14 +50,14 @@ const workshopPrompts: PromptCard[] = [
 
 - Idioma: [INGLÊS]
 - Nível: [A1]
-- Tema: [comparatives, cheap/cheaper, tall/taller]
+- Tema: [comparatives: cheap/cheaper, tall/taller]
 - Quantidade: [30] cards
 
 Regras do material:
 1. Cada card tem FRENTE (palavra base) e VERSO (resposta + tradução curta em pt-BR).
 2. Clique vira o card (efeito flip). Inclua botão de embaralhar e filtros por grupo.
 3. Visual simples para projetar: fundo claro, fonte grande, 1 instrução no topo.
-4. No topo: título + nível + meu nome [[SEU NOME]].
+4. No topo: título + nível + meu nome [SEU NOME].
 5. No final: 1 dica de uso em aula em 2 linhas.
 6. Salve como atividade-[tema].html e me diga como abrir e imprimir em PDF.`,
   },
@@ -100,7 +100,7 @@ Estrutura obrigatória (5 blocos):
 4. Regra rápida (1 frase)
 5. Dica + mini-exercício de 5 linhas no rodapé
 
-Formato: HTML único + CSS inline, pronto para A4 paisagem, com badge "Nível A1" e assinatura [SEU NOME]. Salve como ficha-[tema].html e me diga como gerar o PDF.`,
+Formato: HTML único + CSS inline, pronto para A4 paisagem, com badge "Nível [NÍVEL]" e assinatura [SEU NOME]. Salve como ficha-[tema].html e me diga como gerar o PDF.`,
   },
   {
     id: "w-listening",
@@ -132,35 +132,35 @@ const teacherPrompts: PromptCard[] = [
     category: "Para professores",
     title: "Atividade para aula",
     description: "Versão rápida: worksheet pronta para sua turma, com espaço para responder.",
-    body: `Monte uma atividade sobre [TEMA] para [IDADE OU NÍVEL]. Misture tipos de exercício: múltipla escolha, complete as lacunas, relacione as colunas e uma escrita curta. Deixe espaço para o aluno responder. Instruções simples, no nível da turma. Salve em arquivo pronto para imprimir, com o gabarito no fim, separado da cópia do aluno.`,
+    body: `Monte uma atividade sobre [TEMA] para [IDIOMA] [IDADE OU NÍVEL]. Misture 4 tipos: múltipla escolha, complete as lacunas, relacione as colunas e 1 escrita curta. Deixe espaço para o aluno responder. Instruções simples, no nível da turma. Entregue 2 arquivos: atividade-[tema].md (cópia do aluno, sem respostas) e gabarito-[tema].md (respostas + 1 linha explicando cada uma).`,
   },
   {
     id: "t-exam",
     category: "Para professores",
     title: "Prova pronta",
     description: "Versão rápida: prova no formato escolar, pronta para aplicar.",
-    body: `Monte uma prova sobre [TEMA] para [NÍVEL]. Use questões de múltipla escolha, tarefas numeradas com o valor de cada uma e uma seção de leitura com texto curto + perguntas. Nota total no topo. Salve em arquivo pronto para imprimir, com o gabarito no fim, separado da cópia do aluno.`,
+    body: `Monte uma prova sobre [TEMA] para [IDIOMA] [NÍVEL], [10] questões, [30 minutos]. Use múltipla escolha + tarefas numeradas com o valor de cada uma + 1 leitura curta com perguntas. Nota total no topo e cabeçalho (nome, data, turma). Entregue 2 arquivos: prova-[tema].md (sem respostas) e gabarito-[tema].md (respostas + 1 linha explicando cada uma + critério de correção).`,
   },
   {
     id: "t-discussion",
     category: "Para professores",
     title: "Perguntas para debate",
     description: "Perguntas que fazem a próxima aula realmente conversar.",
-    body: `Com base em [MATERIAL], me dê perguntas para debater na próxima aula. Abertas, sem resposta sim ou não: algumas de compreensão, algumas de opinião e uma ou duas ligando com a vida deles. Umas dez no total, agrupadas por tema, marcando as duas que vão render mais debate.`,
+    body: `Com base em [MATERIAL], me dê perguntas para debater na próxima aula com [NÍVEL]. Abertas, sem resposta sim ou não: algumas de compreensão, algumas de opinião e 1 ou 2 ligando com a vida deles. 10 no total, agrupadas por tema, marcando as 2 que vão render mais debate. Entregue em markdown, 1 pergunta por linha.`,
   },
   {
     id: "t-lesson",
     category: "Para professores",
     title: "Plano de aula",
     description: "Do tema à atividade e à avaliação, com tempo de cada parte.",
-    body: `Transforme [TEMA] em um plano de aula para [IDADE OU NÍVEL]. Comece com 1 objetivo claro. Depois o plano em blocos de tempo: abertura curta, 2 ou 3 atividades principais e fechamento rápido, com minutos de cada parte e o que preparar. Termine com 1 avaliação de 1 linha para ver se a aula funcionou.`,
+    body: `Transforme [TEMA] em um plano de aula para [IDIOMA] [IDADE OU NÍVEL], aula de [60 minutos]. Comece com 1 objetivo claro. Depois o plano em blocos de tempo: abertura curta, 2 ou 3 atividades principais e fechamento rápido, com minutos de cada parte e o que preparar. Termine com 1 avaliação de 1 linha para ver se a aula funcionou. Entregue em markdown.`,
   },
   {
     id: "t-retrieval",
     category: "Para professores",
     title: "Quiz de abertura",
     description: "Quiz rápido para abrir a aula e ver o que ficou.",
-    body: `Monte um quiz rápido de revisão sobre [TEMA] para abrir a aula. 5 perguntas, do fácil ao difícil, misturando completar, múltipla escolha e 1 de memória. Coisa de 5 minutos. Respostas no fim para corrigir rápido.`,
+    body: `Monte um quiz rápido de revisão sobre [TEMA] para [NÍVEL], para abrir a aula. 5 perguntas, do fácil ao difícil, misturando completar, múltipla escolha e 1 de memória. Coisa de 5 minutos. Entregue em markdown com as respostas no fim para corrigir rápido.`,
   },
   {
     id: "t-game",
@@ -181,15 +181,15 @@ const builderPrompts: PromptCard[] = [
 
 - Nome da skill: [NOME CURTO, ex: quiz-rapido]
 - Quando usar: [QUANDO CHAMAR, ex: quando eu disser "Quiz rapido sobre..."]
-- O que ela faz: [DESCREVA EM 2 LINHAS, ex: gera 5 perguntas do facil ao dificil + gabarito no fim]
-- Formato de saida: [ex: markdown pronto para imprimir, com gabarito separado]
-- Exemplo real: [COLE 1 EXEMPLO BOM SEU, ou escreva "use meu padrao de prova"]
+- O que ela faz: [DESCREVA EM 2 LINHAS, ex: gera 5 perguntas do fácil ao difícil + gabarito no fim]
+- Formato de saída: [ex: markdown pronto para imprimir, com gabarito separado]
+- Exemplo real: [COLE 1 EXEMPLO BOM SEU, ou escreva "use meu padrão de prova"]
 
 Regras:
-1. Gere a pasta skills/[NOME]/ com SKILL.md completo: nome, descricao com gatilhos em PT, workflow em passos numerados.
-2. Deixe os gatilhos em portugues do jeito que eu falo (ex: "faz quiz", "monta prova").
+1. Gere a pasta skills/[NOME]/ com SKILL.md completo: nome, descrição com gatilhos em PT, workflow em passos numerados.
+2. Deixe os gatilhos em português do jeito que eu falo (ex: "faz quiz", "monta prova").
 3. No fim, me diga como testar em 1 frase e como chamar a skill depois.
-4. Nada de teoria. So entregue a skill pronta.`,
+4. Nada de teoria. Só entregue a skill pronta.`,
   },
   {
     id: "c-modificar-agente",
@@ -200,12 +200,12 @@ Regras:
 
 - Agente: [NOME, ex: Dicien / Visu / Homework / Corretor]
 - O que manter: [ex: formato atual, tom direto]
-- O que mudar: [ex: exemplos mais curtos, sempre com traducao, sempre com audio]
-- Meu padrao: [COLE 1 EXEMPLO DO SEU GOSTO ou escreva "siga minha ultima ficha"]
+- O que mudar: [ex: exemplos mais curtos, sempre com tradução, sempre com áudio]
+- Meu padrão: [COLE 1 EXEMPLO DO SEU GOSTO ou escreva "siga minha última ficha"]
 
 Regras:
 1. Abra o arquivo agents/[NOME].md ou skills/[NOME]/SKILL.md e mostre o que vai mudar antes de mudar.
-2. Edite so o necessario. Nao reescreva tudo.
+2. Edite só o necessário. Não reescreva tudo.
 3. Mantenha os gatilhos antigos funcionando e adicione meus novos gatilhos em PT.
 4. No fim, me diga como testar com 1 comando e o que mudou em 3 bullets.`,
   },
@@ -218,8 +218,8 @@ Regras:
 
 - Nome do agente: [ex: Roteirista]
 - Quando chamar: [ex: quando eu disser "Roteirista, ..."]
-- Personalidade: [ex: direto, pratico, sem teoria]
-- Rotina: [DESCREVA EM 3 PASSOS, ex: 1 entende tema e nivel, 2 gera roteiro com tempos, 3 entrega arquivo pronto]
+- Personalidade: [ex: direto, prático, sem teoria]
+- Rotina: [DESCREVA EM 3 PASSOS, ex: 1 entende tema e nível, 2 gera roteiro com tempos, 3 entrega arquivo pronto]
 - Exemplo de entrada e saida: [COLE 1 EXEMPLO CURTO]
 
 Regras:
